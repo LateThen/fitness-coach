@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ProductType, getProducts } from "../../models/Product";
-import ProductLink from "../../components/UserLink";
-import Product from "../Product/Product";
+import ProductLink from "../../components/ProductLink";
 
 export default function UserList() {
     const [products, setProducts] = useState<ProductType[]>();
@@ -46,7 +45,7 @@ export default function UserList() {
         <>
         {
             products.map((product, index) => (
-                <Product key={index} {...product}/>   //vezme každý prvek a vloží to na danou pozici
+                <ProductLink key={index} {...product}/>   //vezme každý prvek a vloží to na danou pozici
             ))
         }        
         <Link to={"/"}>

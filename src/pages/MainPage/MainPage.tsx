@@ -23,6 +23,10 @@ export function MainPage() {
 
             <Link to={"/createproduct"}>
                 <p>Create produkt</p>
+            </Link> 
+            
+             <Link to={"/products"}>
+                <p>Product list</p>
             </Link>
         </>
     )

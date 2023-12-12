@@ -1,7 +1,7 @@
 
 
 export const getProducts = async () => {
-  const res = await fetch("http://localhost:3000/product", {
+  const res = await fetch("http://localhost:3000/products", {
     method: "GET",
     headers: {
         Accept: "application/json",
@@ -13,7 +13,7 @@ export const getProducts = async () => {
 }
 
 export const getProduct = async (id: string) => {
-  const res = await fetch(`http://localhost:3000/product/${id}`, {
+  const res = await fetch(`http://localhost:3000/products/${id}`, {
     method: "GET",
     headers: {
         Accept: "application/json",
@@ -25,7 +25,7 @@ export const getProduct = async (id: string) => {
 }
 
 export const createProduct = async (formData: ProductType) => {
-  const res = await fetch("http://localhost:3000/product", {
+  const res = await fetch("http://localhost:3000/products", {
     method: "POST",
     headers: {
         "Content-Type": "application/json",
@@ -37,7 +37,7 @@ export const createProduct = async (formData: ProductType) => {
 }
 
 export const updateProduct = async (id: string, formData: ProductType) => {
-  const res = await fetch(`http://localhost:3000/product/${id}`, {
+  const res = await fetch(`http://localhost:3000/products/${id}`, {
     method: "PUT",
     headers: {
         Accept: "application/json",
@@ -50,7 +50,7 @@ export const updateProduct = async (id: string, formData: ProductType) => {
 }
 
 export const deleteProduct = async (id: string) => {
-  const res = await fetch(`http://localhost:3000/product/${id}`, {
+  const res = await fetch(`http://localhost:3000/products/${id}`, {
     method: "DELETE",
     headers: {
         Accept: "application/json",
