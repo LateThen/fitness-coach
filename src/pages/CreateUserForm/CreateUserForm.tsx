@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createUser } from "../../models/User";
 import { UserType } from "../../models/User";
 
@@ -20,7 +20,13 @@ export default function CreateUserForm(){
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setFormData({...formData, [e.target.name]: e.target.value});
+
     }
+
+
+    useEffect(() => {
+      console.log(formData)
+    }, [formData])
 
     const handlePost = (e: React.FormEvent) => {
       e.preventDefault();
@@ -33,6 +39,8 @@ export default function CreateUserForm(){
         <form>
             <input required type="text" name="username" placeholder="Zadejte uživatelské jméno" onChange={e => handleChange(e)}/>
             <input required type="number" name="phone" placeholder="Zadejte telefonní číslo" onChange={e => handleChange(e)}/>
+            <input required type="radio" name="gender" value="Male" onChange={e => handleChange(e)}/>
+            <input required type="radio" name="gender" value="Female" onChange={e => handleChange(e)}/>
             <input required type="password" name="password" placeholder="Zadejte přihlašovací heslo" onChange={e => handleChange(e)}/>
             <button onClick={handlePost}>
                 Create User
